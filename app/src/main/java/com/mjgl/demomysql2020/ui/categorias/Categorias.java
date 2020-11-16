@@ -3,6 +3,7 @@ package com.mjgl.demomysql2020.ui.categorias;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -48,6 +49,7 @@ public class Categorias extends Fragment implements View.OnClickListener{
 
         // Inflate the layout for this fragment
        View root = inflater.inflate(R.layout.fragment_categorias, container, false);
+
        ti_idcategoria = root.findViewById(R.id.ti_idcategoria);
        ti_namecategoria = root.findViewById(R.id.ti_namecategoria);
 

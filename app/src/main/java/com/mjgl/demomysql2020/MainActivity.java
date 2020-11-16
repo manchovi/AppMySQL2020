@@ -8,6 +8,7 @@ import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -97,12 +98,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
 
-        myDialog = new Dialog(this);
 
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_left));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.mycolor_blanco));
+        toolbar.setTitleMargin(0, 0, 0, 0);
+        toolbar.setSubtitle("CRUD");
+        getSupportActionBar().setTitle("MYSQL");
+
+        //Función para evitar la rotación de la pantalla del CELULAR.
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //y esto para pantalla completa (oculta incluso la barra de estado)
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        myDialog = new Dialog(this);
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
